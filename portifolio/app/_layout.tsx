@@ -44,12 +44,10 @@ export default function Layout() {
           paddingBottom: 10,
         }}
       >
-        <NavItem label="Home" route="/" />
+        <NavItem label="Sobre" route="/" />
         <NavItem label="Experiências" route="/experiencia" />
         <NavItem label="Jogo" route="/jogo_forca" />
       </View>
-
-      {/* Tela atual */}
       <Slot />
     </View>
   );
