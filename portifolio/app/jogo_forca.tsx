@@ -12,9 +12,9 @@ const PALAVRAS = [
   "CRICIUMA", "HOLANDA", "BRASIL", "BELGICA", "CRB", "CSA", "AMERICA DE PERNAMBUCO",
   "BRUSQUE", "FIGUEIRENSE", "CORITIBA", "ATHLETICO PARANAENSE", "SAO PAULO",
   "CORINTHIANS", "PALMEIRAS", "SANTOS", "FLUMINENSE", "VASCO DA GAMA", "BOTAFOGO",
-  "GREMIO", "SULAMERICA", "ARGENTINA", "ALEMANHA", "FRANCA", "ITALIA",
+  "GREMIO", "SULAMERICANA", "ARGENTINA", "ALEMANHA", "FRANCA", "ITALIA",
   "ESPANHA", "INGLATERRA", "PORTUGAL", "URUGUAI", "CHILE", "COLOMBIA",
-  "EQUADOR", "PARAGUAI", "BOLIVIA", "PERU", "VENEZUELA"
+  "EQUADOR", "PARAGUAI", "BOLIVIA","LIBERTADORES","NEYMAR","MESSI","MAGRÃO", "PERU", "VENEZUELA"
 ];
 
 export default function Jogo() {
@@ -83,23 +83,11 @@ export default function Jogo() {
           <View style={styles.poste} />
           <View style={styles.topo} />
           <View style={styles.corda} />
-
-          {/* Cabeça */}
           {letrasErradas.length > 0 && <View style={styles.cabeca} />}
-
-          {/* Corpo */}
           {letrasErradas.length > 1 && <View style={styles.corpo} />}
-
-          {/* Braço esquerdo */}
           {letrasErradas.length > 2 && <View style={styles.bracoEsq} />}
-
-          {/* Braço direito */}
           {letrasErradas.length > 3 && <View style={styles.bracoDir} />}
-
-          {/* Perna esquerda */}
           {letrasErradas.length > 4 && <View style={styles.pernaEsq} />}
-
-          {/* Perna direita */}
           {letrasErradas.length > 5 && <View style={styles.pernaDir} />}
         </View>
 
@@ -140,10 +128,10 @@ export default function Jogo() {
         )}
 
         {venceu && (
-          <Text style={styles.mensagem}>🎉 Você venceu! A palavra era "{palavra}"</Text>
+          <Text style={styles.mensagem}> Você venceu! A palavra era "{palavra}"</Text>
         )}
         {perdeu && (
-          <Text style={styles.mensagem}>❌ Você perdeu! A palavra era "{palavra}"</Text>
+          <Text style={styles.mensagem}> Você perdeu! A palavra era "{palavra}"</Text>
         )}
 
         {(venceu || perdeu) && (
@@ -168,7 +156,6 @@ const styles = StyleSheet.create({
   },
   title: { fontSize: 28, fontWeight: "bold", textAlign: "center" },
 
-  /* FORCA */
   forcaContainer: {
     width: 200,
     height: 250,
