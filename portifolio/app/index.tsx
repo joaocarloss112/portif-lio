@@ -5,7 +5,7 @@ export default function Home() {
     <ScrollView style={styles.container}>
       <View style={styles.hero}>
         <Image
-          source={require("../assets/images/icon.png")}
+          source={require("../assets/images/joaocarlos.png")}
           style={styles.profile}
         />
 
