@@ -7,7 +7,7 @@ export default function Experiencias() {
       descricao:
         "Cardápio digital interativo para uma doceria, permitindo que os clientes visualizem os produtos e peçam pelo WhatsApp.",
       tecnologias: "Django, MySQL, HTML, CSS",
-      imagem: require("../assets/images/joaocarlos.png"),
+      imagem: require("../assets/images/logo.png"),
       github: "https://github.com/liralves/Projeto-Integrador",
     },
     {
@@ -15,7 +15,7 @@ export default function Experiencias() {
       descricao:
         "Aplicação que consome a API do TMDB para exibir filmes populares, categorias e gêneros, em interface estilo streaming.",
       tecnologias: "Next.js, React, TMDB API",
-      imagem: require("../assets/images/joaocarlos.png"),
+      imagem: require("../assets/images/filmeflix.png"),
       github: "https://github.com/joaocarloss112/filmeflix",
     },
     {
@@ -23,7 +23,7 @@ export default function Experiencias() {
       descricao:
         "Sistema de automação em Python usando WebDriver, integrado a MySQL para salvar resultados e relatórios.",
       tecnologias: "Python, MySQL",
-      imagem: require("../assets/images/joaocarlos.png"),
+      imagem: require("../assets/images/webdriver.png"),
       github: "https://github.com/joaocarloss112/webdriver",
     },
     {
