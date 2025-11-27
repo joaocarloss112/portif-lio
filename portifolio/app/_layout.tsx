@@ -44,7 +44,8 @@ export default function Layout() {
           paddingBottom: 10,
         }}
       >
-        <NavItem label="Sobre" route="/" />
+        <NavItem label="Home" route="/" />
+        <NavItem label="Sobre" route="/sobre" />
         <NavItem label="Experiências" route="/experiencia" />
         <NavItem label="Jogo" route="/jogo_forca" />
       </View>

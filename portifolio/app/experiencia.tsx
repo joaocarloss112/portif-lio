@@ -1,4 +1,5 @@
 import { View, Text, Image, TouchableOpacity, StyleSheet, ScrollView, Linking } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Experiencias() {
   const projetos = [
@@ -27,6 +28,14 @@ export default function Experiencias() {
       github: "https://github.com/joaocarloss112/webdriver",
     },
     {
+      titulo: "Portfólio Mobile",
+      descricao:
+        "Versão mobile do meu portfólio, desenvolvida com React Native e Expo.s.",
+      tecnologias: "Expo, React Native, Expo Router, TypeScript",
+      imagem: require("../assets/images/joaocarlos.png"),
+      github: "https://github.com/joaocarloss112/portif-lio"
+    },
+    {
       titulo: "Portfólio",
       descricao:
         "Meu portfólio pessoal desenvolvido em Next.js, onde apresento minha trajetória, habilidades e projetos.",
@@ -37,39 +46,44 @@ export default function Experiencias() {
   ];
 
   return (
-    <ScrollView style={styles.container}>
-      <Text style={styles.titulo}>Projetos</Text>
+    <SafeAreaView style={{ flex: 1 }}>
+      <ScrollView
+        style={styles.container}
+        contentContainerStyle={{ paddingBottom: 30 }}
+      >
+        <Text style={styles.titulo}>Projetos</Text>
 
-      <View style={styles.grid}>
-        {projetos.map((p, i) => (
-          <View key={i} style={styles.card}>
-            <Image source={p.imagem} style={styles.img} resizeMode="cover" />
+        <View style={styles.grid}>
+          {projetos.map((p, i) => (
+            <View key={i} style={styles.card}>
+              <Image source={p.imagem} style={styles.img} resizeMode="cover" />
 
-            <Text style={styles.cardTitulo}>{p.titulo}</Text>
-            <Text style={styles.cardDesc}>{p.descricao}</Text>
+              <Text style={styles.cardTitulo}>{p.titulo}</Text>
+              <Text style={styles.cardDesc}>{p.descricao}</Text>
 
-            <Text style={styles.tech}>
-              <Text style={{ fontWeight: "bold" }}>Tecnologias:</Text> {p.tecnologias}
-            </Text>
+              <Text style={styles.tech}>
+                <Text style={{ fontWeight: "bold" }}>Tecnologias:</Text> {p.tecnologias}
+              </Text>
 
-            <TouchableOpacity onPress={() => Linking.openURL(p.github)}>
-              <Text style={styles.link}>Ver no GitHub</Text>
-            </TouchableOpacity>
-          </View>
-        ))}
-      </View>
-    </ScrollView>
+              <TouchableOpacity onPress={() => Linking.openURL(p.github)}>
+                <Text style={styles.link}>Ver no GitHub</Text>
+              </TouchableOpacity>
+            </View>
+          ))}
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    padding: 12,
     backgroundColor: "#b86868ff",
   },
   titulo: {
-    fontSize: 26,
+    fontSize: 30,
     fontWeight: "bold",
     textAlign: "center",
     marginBottom: 25,
@@ -83,8 +97,8 @@ const styles = StyleSheet.create({
     width: "48%",
     backgroundColor: "#f1f1f1",
     padding: 12,
-    borderRadius: 12,
-    marginBottom: 20,
+    borderRadius: 16,
+    marginBottom: 15,
   },
   img: {
     width: "100%",

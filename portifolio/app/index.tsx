@@ -1,60 +1,67 @@
-import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
+import { View, Text, Image, TouchableOpacity, StyleSheet, ScrollView } from "react-native";
+import { useRouter } from "expo-router";
 
 export default function Home() {
+  const router = useRouter();
+
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.hero}>
-        <Image
-          source={require("../assets/images/joaocarlos.png")}
-          style={styles.profile}
-        />
+    <ScrollView contentContainerStyle={styles.container}>
+      <Image
+        source={require("../assets/images/joaocarlos.png")}
+        style={styles.foto}
+      />
 
-        <View style={styles.textArea}>
-          <Text style={styles.title}>João Carlos</Text>
-          <Text style={styles.paragraph}>
-            Sou estudante de Ciência da Computação e em rumo ao
-            desenvolvimento Full Stack, tenho experiência em projetos Web
-            utilizando Django, React e Next. Além disso, contribuo em um projeto
-            de RPA e um cardápio digital para uma doceria.
-          </Text>
-        </View>
+      <Text style={styles.nome}>João Carlos</Text>
 
-        <View style={styles.skillsSection}>
-          <Text style={styles.subtitle}>Habilidades</Text>
+      <TouchableOpacity style={styles.botao} onPress={() => router.push("/sobre")}>
+        <Text style={styles.botaoTexto}>Sobre</Text>
+      </TouchableOpacity>
 
-          <View style={styles.skillsGrid}>
-            {["React", "Next.js", "Django", "MySQL", "Java", "Python"].map((skill) => (
-              <View key={skill} style={styles.skillTag}>
-                <Text style={styles.skillText}>{skill}</Text>
-              </View>
-            ))}
-          </View>
-        </View>
-      </View>
+      <TouchableOpacity style={styles.botao} onPress={() => router.push("/experiencia")}>
+        <Text style={styles.botaoTexto}>Experiência</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.botao} onPress={() => router.push("/jogo_forca")}>
+        <Text style={styles.botaoTexto}>Jogo da Forca</Text>
+      </TouchableOpacity>
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { backgroundColor: "#b86868ff", padding: 20 },
-  hero: { alignItems: "center", marginTop: 20 },
-  profile: { width: 200, height: 220, borderRadius: 12 },
-  textArea: { marginTop: 20 },
-  title: { fontSize: 28, fontWeight: "bold", textAlign: "center" },
-  paragraph: { fontSize: 16, textAlign: "center", marginTop: 10 },
-  skillsSection: { marginTop: 20, width: "100%" },
-  subtitle: { fontSize: 22, fontWeight: "bold" },
-  skillsGrid: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 10,
-    marginTop: 10,
+  container: {
+    flexGrow: 1,
+    paddingTop: 80,
+    paddingBottom: 100,
+    alignItems: "center",
+    backgroundColor: "#f3f3f3",
   },
-  skillTag: {
-    backgroundColor: "#222",
-    paddingHorizontal: 15,
-    paddingVertical: 8,
-    borderRadius: 20,
+
+  foto: {
+    width: 160,
+    height: 160,
+    borderRadius: 12,
+    marginBottom: 20,
   },
-  skillText: { color: "#fff", fontWeight: "bold" },
+
+  nome: {
+    fontSize: 28,
+    fontWeight: "bold",
+    marginBottom: 40,
+  },
+
+  botao: {
+    width: "80%",
+    backgroundColor: "#333",
+    paddingVertical: 15,
+    borderRadius: 12,
+    alignItems: "center",
+    marginBottom: 18,
+  },
+
+  botaoTexto: {
+    color: "white",
+    fontSize: 18,
+    fontWeight: "bold",
+  },
 });
