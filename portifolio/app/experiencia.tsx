@@ -36,7 +36,7 @@ export default function Experiencias() {
       github: "https://github.com/joaocarloss112/portif-lio"
     },
     {
-      titulo: "Portfólio",
+      titulo: "Portfólio Web",
       descricao:
         "Meu portfólio pessoal desenvolvido em Next.js, onde apresento minha trajetória, habilidades e projetos.",
       tecnologias: "Next.js, React, CSS Modules",
@@ -83,11 +83,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#b86868ff",
   },
   titulo: {
-    fontSize: 30,
+    fontSize: 32,
     fontWeight: "bold",
     textAlign: "center",
     marginBottom: 25,
-  },
+    color: "#fff",
+} ,
+
   grid: {
     flexDirection: "row",
     flexWrap: "wrap",

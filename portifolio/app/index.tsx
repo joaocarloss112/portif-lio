@@ -6,12 +6,13 @@ export default function Home() {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
+      <Text style={styles.boasVindas}>Bem-vindo ao meu portfólio mobile</Text>
       <Image
         source={require("../assets/images/joaocarlos.png")}
         style={styles.foto}
       />
 
-      <Text style={styles.nome}>João Carlos</Text>
+      <Text style={styles.nome}>João Carlos Barbosa da Silva</Text>
 
       <TouchableOpacity style={styles.botao} onPress={() => router.push("/sobre")}>
         <Text style={styles.botaoTexto}>Sobre</Text>
@@ -34,18 +35,24 @@ const styles = StyleSheet.create({
     paddingTop: 80,
     paddingBottom: 100,
     alignItems: "center",
-    backgroundColor: "#f3f3f3",
+    backgroundColor: "#b86868ff",
   },
 
   foto: {
-    width: 160,
-    height: 160,
+    width: 140,
+    height: 170,
     borderRadius: 12,
     marginBottom: 20,
   },
+  boasVindas: {
+  fontSize: 23,
+  fontWeight: "bold",
+  marginBottom: 20,
+  textAlign: "center",
+ },
 
   nome: {
-    fontSize: 28,
+    fontSize: 20,
     fontWeight: "bold",
     marginBottom: 40,
   },
