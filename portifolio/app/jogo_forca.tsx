@@ -76,8 +76,7 @@ export default function Jogo() {
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.gameBox}>
         <Text style={styles.title}>Jogo da Forca</Text>
-
-        {/* DESENHO DA FORCA */}
+        <Text style={styles.subtitle}>Tema: Futebol</Text>
         <View style={styles.forcaContainer}>
           <View style={styles.base} />
           <View style={styles.poste} />
@@ -155,6 +154,14 @@ const styles = StyleSheet.create({
     elevation: 4,
   },
   title: { fontSize: 28, fontWeight: "bold", textAlign: "center" },
+  subtitle: {
+  fontSize: 22,
+  fontWeight: "600",
+  textAlign: "center",
+  marginTop: 3,
+  marginBottom: 10,
+  color: "#000000ff"
+ },
 
   forcaContainer: {
     width: 200,
